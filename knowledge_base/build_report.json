@@ -1,5 +1,5 @@
 {
-  "documents_processed": 33,
+  "documents_processed": 34,
   "total_replacements": 310,
   "documents_with_leftovers": 0,
   "documents": [
@@ -198,6 +198,12 @@
     {
       "file": "33_about_cinema_lor.md",
       "replacements": 6,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "34_malicious_injection.md",
+      "replacements": 0,
       "leftover_terms_count": 0,
       "leftover_terms_sample": []
     }
