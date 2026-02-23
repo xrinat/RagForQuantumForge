@@ -1,0 +1,128 @@
+[
+  {
+    "query": "Кто нес Нулевую Печать к Пепельному Пику?",
+    "answer": "Шаги:\n1. Сначала ищу релевантные фрагменты в векторном индексе FAISS.\n2. Затем отбираю предложения с максимальным смысловым совпадением по вопросу.\n3. Формирую ответ только по найденным фрагментам.\nОтвет: Пепельный Пик в Сумеречном Крае была единственным местом, где можно уничтожить Нулевая Печать. Печать исчезло в огне, и власть Морвата завершилась.\nИсточники:\n- knowledge_base/27_mount_doom.md (Пепельный Пик)\n- knowledge_base/09_gollum.md (Скелл)\n- knowledge_base/07_boromir.md (Каэль Дорн)",
+    "top_hits": [
+      {
+        "source_path": "knowledge_base/27_mount_doom.md",
+        "title": "Пепельный Пик",
+        "score": 0.5311
+      },
+      {
+        "source_path": "knowledge_base/09_gollum.md",
+        "title": "Скелл",
+        "score": 0.447
+      },
+      {
+        "source_path": "knowledge_base/07_boromir.md",
+        "title": "Каэль Дорн",
+        "score": 0.4089
+      }
+    ]
+  },
+  {
+    "query": "Какую роль играл Железный Шпиль в войне?",
+    "answer": "Шаги:\n1. Сначала ищу релевантные фрагменты в векторном индексе FAISS.\n2. Затем отбираю предложения с максимальным смысловым совпадением по вопросу.\n3. Формирую ответ только по найденным фрагментам.\nОтвет: Железный Шпиль стал военной базой Хелриона в годы войны. После атаки энтов под руководством Дубостража Железный Шпиль был затоплен и выведен из строя.\nИсточники:\n- knowledge_base/25_isengard.md (Железный Шпиль)\n- knowledge_base/11_saruman.md (Хелрион)\n- knowledge_base/32_helms_deep.md (Железная Долина)",
+    "top_hits": [
+      {
+        "source_path": "knowledge_base/25_isengard.md",
+        "title": "Железный Шпиль",
+        "score": 0.6712
+      },
+      {
+        "source_path": "knowledge_base/11_saruman.md",
+        "title": "Хелрион",
+        "score": 0.6322
+      },
+      {
+        "source_path": "knowledge_base/32_helms_deep.md",
+        "title": "Железная Долина",
+        "score": 0.6309
+      }
+    ]
+  },
+  {
+    "query": "Почему Белый Бастион был важен для Валенара?",
+    "answer": "Шаги:\n1. Сначала ищу релевантные фрагменты в векторном индексе FAISS.\n2. Затем отбираю предложения с максимальным смысловым совпадением по вопросу.\n3. Формирую ответ только по найденным фрагментам.\nОтвет: Белый Бастион был укрепленной столицей Валенара. После войны Белый Бастион стал центром политического перехода при Ридане.\nИсточники:\n- knowledge_base/26_minas_tirith.md (Белый Бастион)\n- knowledge_base/07_boromir.md (Каэль Дорн)\n- knowledge_base/12_witch_king.md (Ночной Регент)",
+    "top_hits": [
+      {
+        "source_path": "knowledge_base/26_minas_tirith.md",
+        "title": "Белый Бастион",
+        "score": 0.5754
+      },
+      {
+        "source_path": "knowledge_base/07_boromir.md",
+        "title": "Каэль Дорн",
+        "score": 0.537
+      },
+      {
+        "source_path": "knowledge_base/12_witch_king.md",
+        "title": "Ночной Регент",
+        "score": 0.5288
+      }
+    ]
+  },
+  {
+    "query": "Кто помог разрушить Железный Шпиль?",
+    "answer": "Шаги:\n1. Сначала ищу релевантные фрагменты в векторном индексе FAISS.\n2. Затем отбираю предложения с максимальным смысловым совпадением по вопросу.\n3. Формирую ответ только по найденным фрагментам.\nОтвет: Железный Шпиль стал военной базой Хелриона в годы войны. После атаки энтов под руководством Дубостража Железный Шпиль был затоплен и выведен из строя.\nИсточники:\n- knowledge_base/25_isengard.md (Железный Шпиль)\n- knowledge_base/11_saruman.md (Хелрион)\n- knowledge_base/32_helms_deep.md (Железная Долина)",
+    "top_hits": [
+      {
+        "source_path": "knowledge_base/25_isengard.md",
+        "title": "Железный Шпиль",
+        "score": 0.6521
+      },
+      {
+        "source_path": "knowledge_base/11_saruman.md",
+        "title": "Хелрион",
+        "score": 0.5592
+      },
+      {
+        "source_path": "knowledge_base/32_helms_deep.md",
+        "title": "Железная Долина",
+        "score": 0.5539
+      }
+    ]
+  },
+  {
+    "query": "Как зовут столицу планеты Ти'лора?",
+    "answer": "Я не знаю",
+    "top_hits": [
+      {
+        "source_path": "knowledge_base/26_minas_tirith.md",
+        "title": "Белый Бастион",
+        "score": 0.3188
+      },
+      {
+        "source_path": "knowledge_base/28_rohan.md",
+        "title": "Штормовая Равнина",
+        "score": 0.3178
+      },
+      {
+        "source_path": "knowledge_base/06_gimli.md",
+        "title": "Борин Флинтвард",
+        "score": 0.2632
+      }
+    ]
+  },
+  {
+    "query": "Какой двигатель использует HyperRelay?",
+    "answer": "Я не знаю",
+    "top_hits": [
+      {
+        "source_path": "knowledge_base/30_fellowship.md",
+        "title": "Круг Печати",
+        "score": 0.2022
+      },
+      {
+        "source_path": "knowledge_base/01_frodo_baggins.md",
+        "title": "Каэль Торнвик",
+        "score": 0.191
+      },
+      {
+        "source_path": "knowledge_base/20_shire.md",
+        "title": "Зеленая Лощина",
+        "score": 0.1736
+      }
+    ]
+  }
+]

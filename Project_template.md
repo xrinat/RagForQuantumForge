@@ -107,25 +107,25 @@
 
 Для проверки RAG выбрал предметную область «Властелин колец» и собрал локальную базу знаний с анонимизацией терминов.
 
-1. Сформировал исходный корпус в `rawSources/`.
+1. Сформировал исходный корпус в 'rawSources/'.
 - Подготовил 33 markdown-документа.
 - Принцип разбиения: один файл = одна сущность (персонаж, локация, событие или группа).
 
-2. Подготовил словарь подмены `terms_map.json`.
-- Формат: `"оригинал": "вымышленный термин"`.
+2. Подготовил словарь подмены 'terms_map.json'.
+- Формат: '"оригинал": "вымышленный термин"'.
 - Добавил не только базовые формы, но и распространенные падежи, чтобы уменьшить утечки исходных названий.
 
 3. Реализовал автоматическую обработку.
-- Скрипт сборки и подмены: `scripts/build_knowledge_base.py`.
-- Команда сборки: `python scripts/build_knowledge_base.py`.
+- Скрипт сборки и подмены: 'scripts/build_knowledge_base.py'.
+- Команда сборки: 'python scripts/build_knowledge_base.py'.
 
-4. Сформировал финальную базу `knowledge_base/`.
-- На выходе: 33 обработанных `.md`-файла.
-- Отчет сборки: `knowledge_base/build_report.json`.
+4. Сформировал финальную базу 'knowledge_base/'.
+- На выходе: 33 обработанных '.md'-файла.
+- Отчет сборки: 'knowledge_base/build_report.json'.
 
 ### Результаты проверки
 
-По актуальному отчету `knowledge_base/build_report.json`:
+По актуальному отчету 'knowledge_base/build_report.json':
 1. Обработано документов: 33.
 2. Выполнено замен терминов: 310.
 3. Документов с остатками терминов из словаря: 0.
@@ -139,43 +139,140 @@
 ### Что сделал
 
 1. Выбрал модель эмбеддингов из локального стека:
-- Название: `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
-- Ссылка: `https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
-- Размер эмбеддинга: `384`
+- Название: 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'
+- Ссылка: 'https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'
+- Размер эмбеддинга: '384'
 
-2. Реализовал индексацию в скрипте `scripts/build_index.py`:
-- Загрузка документов из `knowledge_base/`.
-- Разбиение на чанки по словам (`chunk_words=180`, `overlap_words=40`).
+2. Реализовал индексацию в скрипте 'scripts/build_index.py':
+- Загрузка документов из 'knowledge_base/'.
+- Разбиение на чанки по словам ('chunk_words=180', 'overlap_words=40').
 - Формирование эмбеддингов для каждого чанка.
 - Сохранение индекса в FAISS и метаданных чанков.
 
 3. Добавил поиск по готовому индексу:
-- Скрипт `scripts/search_index.py`.
-- Возвращает `top-k` чанков со score, источником и превью текста.
+- Скрипт 'scripts/search_index.py'.
+- Возвращает 'top-k' чанков со score, источником и превью текста.
 
 ### Результат сборки индекса
 
-Актуальные метрики из `vector_index/build_meta.json`:
-1. База знаний: `knowledge_base`
-2. Документов обработано: `33`
-3. Чанков в индексе: `33`
-4. Время генерации: `27.432` сек
-5. Тип индекса: `faiss.IndexFlatIP (cosine similarity on normalized embeddings)`
+Актуальные метрики из 'vector_index/build_meta.json':
+1. База знаний: 'knowledge_base'
+2. Документов обработано: '33'
+3. Чанков в индексе: '33'
+4. Время генерации: '27.432' сек
+5. Тип индекса: 'faiss.IndexFlatIP (cosine similarity on normalized embeddings)'
 
 ### Артефакты задания 3
 
-1. Индекс: `vector_index/faiss.index`
-2. Метаданные чанков: `vector_index/chunks.jsonl`
-3. Метаданные сборки: `vector_index/build_meta.json`
-4. Примеры запросов и результатов: `vector_index/sample_queries.json`
-5. Краткое описание: `vector_index/README.md`
+1. Индекс: 'vector_index/faiss.index'
+2. Метаданные чанков: 'vector_index/chunks.jsonl'
+3. Метаданные сборки: 'vector_index/build_meta.json'
+4. Примеры запросов и результатов: 'vector_index/sample_queries.json'
+5. Краткое описание: 'vector_index/README.md'
 
 ### Пример запроса к индексу
 
 Команда:
-`python scripts/search_index.py --query "Кто нес Нулевую Печать к Пепельному Пику?" --top-k 3`
+'python scripts/search_index.py --query "Кто нес Нулевую Печать к Пепельному Пику?" --top-k 3'
 
 Пример найденных чанков:
-1. `knowledge_base/27_mount_doom.md` (`Пепельный Пик`)
-2. `knowledge_base/09_gollum.md` (`Скелл`)
-3. `knowledge_base/07_boromir.md` (`Каэль Дорн`)
+1. 'knowledge_base/27_mount_doom.md' ('Пепельный Пик')
+2. 'knowledge_base/09_gollum.md' ('Скелл')
+3. 'knowledge_base/07_boromir.md' ('Каэль Дорн')
+
+## Задание 4. Реализация RAG-бота с техниками промптинга
+
+### Что нужно сделать (и как реализовано)
+
+1. Настроить пайплайн RAG.
+- Реализовано в 'Task4/rag/bot.py'.
+- Бот принимает запрос, строит эмбеддинг, ищет чанки в FAISS, собирает промпт, генерирует ответ и возвращает источники.
+
+2. Подключить Few-shot prompting.
+- В промпт добавлены 2 примера из той же предметной области (анонимизированная база по мотивам LOTR).
+- Реализация примеров: метод '_build_few_shot_examples()' в 'Task4/rag/bot.py'.
+
+3. Подключить Chain-of-Thought (CoT).
+- В system-промпт добавлена инструкция: сначала шаги, потом ответ, затем источники.
+- В учебной версии CoT выводится явно, как требует формулировка задания.
+
+4. Построить интерфейс.
+- Выбран интерфейс REPL (консольный бот).
+- Скрипт запуска: 'Task4/scripts/run_rag_bot.py'.
+
+5. Подключение LLM (Gemini).
+- В 'Task4/rag/bot.py' реализован backend 'gemini' (HTTP-вызов Gemini API).
+- Для запуска используется параметр '--backend gemini'.
+- Поддержаны 'GEMINI_API_KEY' (обязательно), а также 'GEMINI_MODEL' и 'GEMINI_BASE_URL' (опционально).
+- Если ключ не задан, бот в режиме 'gemini' возвращает 'Я не знаю' (защитное поведение).
+
+### Результат
+
+1. Репозиторий с модулем RAG.
+- Загрузка индекса: 'Task4/rag/bot.py' (чтение 'vector_index/faiss.index' и 'vector_index/chunks.jsonl').
+- Прием запроса: 'Task4/scripts/run_rag_bot.py'.
+- Поиск: 'Task4/rag/bot.py' (метод 'retrieve').
+- Промптинг (few-shot, CoT): 'Task4/rag/bot.py' (метод 'build_prompt').
+- Генерация ответа: 'Task4/rag/bot.py' (режимы 'mock' и 'gemini').
+
+2. Запускаемый скрипт.
+- REPL: 'python Task4/scripts/run_rag_bot.py --backend mock --show-context'
+- REPL с Gemini: 'python Task4/scripts/run_rag_bot.py --backend gemini --show-context'
+- Сохранение диалога в файл: 'python Task4/scripts/run_rag_bot.py --backend mock --save-dialog dialogs.jsonl'
+- Генерация набора примеров: 'python Task4/scripts/generate_dialog_examples.py' (скрипт создает файл 'Task4/rag_dialog_examples.json')
+
+3. Примеры 3-5 успешных диалогов.
+- Сформированы скриптом 'Task4/scripts/generate_dialog_examples.py' и сохранены в 'Task4/rag_dialog_examples.json'.
+- Количество успешных примеров: 4.
+
+4. Примеры 1-2 случаев с ответом 'Я не знаю'.
+- Сформированы скриптом 'Task4/scripts/generate_dialog_examples.py' и сохранены в 'Task4/rag_dialog_examples.json'.
+- Количество примеров 'Я не знаю': 2.
+
+### Логи выполнения (успешные диалоги)
+
+1. Запрос: 'Кто нес Нулевую Печать к Пепельному Пику?'
+- Ответ: найден контекст про 'Пепельный Пик' и путь Каэля/Марека; бот вернул ответ с шагами и источниками.
+- Топ-источники:
+  'knowledge_base/27_mount_doom.md' (score 0.5311),
+  'knowledge_base/09_gollum.md' (score 0.4470),
+  'knowledge_base/07_boromir.md' (score 0.4089)
+
+2. Запрос: 'Какую роль играл Железный Шпиль в войне?'
+- Ответ: бот указал, что Железный Шпиль был военной базой Хелриона и был выведен из строя после атаки энтов.
+- Топ-источники:
+  'knowledge_base/25_isengard.md' (score 0.6712),
+  'knowledge_base/11_saruman.md' (score 0.6322),
+  'knowledge_base/32_helms_deep.md' (score 0.6309)
+
+3. Запрос: 'Почему Белый Бастион был важен для Валенара?'
+- Ответ: бот вернул объяснение про столицу Валенара и политическое значение после войны.
+- Топ-источники:
+  'knowledge_base/26_minas_tirith.md' (score 0.5754),
+  'knowledge_base/07_boromir.md' (score 0.5370),
+  'knowledge_base/12_witch_king.md' (score 0.5288)
+
+4. Запрос: 'Кто помог разрушить Железный Шпиль?'
+- Ответ: бот сослался на атаку энтов под руководством Дубостража.
+- Топ-источники:
+  'knowledge_base/25_isengard.md' (score 0.6521),
+  'knowledge_base/11_saruman.md' (score 0.5592),
+  'knowledge_base/32_helms_deep.md' (score 0.5539)
+
+### Логи выполнения (неуспешные диалоги: 'Я не знаю')
+
+1. Запрос: 'Как зовут столицу планеты Ти'лора?'
+- Ответ бота: 'Я не знаю'
+- Причина: вне предметной области базы знаний; top score ниже рабочего порога.
+- Топ-источники (нерелевантные):
+  'knowledge_base/26_minas_tirith.md' (score 0.3188),
+  'knowledge_base/28_rohan.md' (score 0.3178),
+  'knowledge_base/06_gimli.md' (score 0.2632)
+
+2. Запрос: 'Какой двигатель использует HyperRelay?'
+- Ответ бота: 'Я не знаю'
+- Причина: сущность отсутствует в базе; top score значительно ниже порога.
+- Топ-источники (нерелевантные):
+  'knowledge_base/30_fellowship.md' (score 0.2022),
+  'knowledge_base/01_frodo_baggins.md' (score 0.1910),
+  'knowledge_base/20_shire.md' (score 0.1736)
