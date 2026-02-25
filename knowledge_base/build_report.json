@@ -1,0 +1,211 @@
+{
+  "documents_processed": 34,
+  "total_replacements": 310,
+  "documents_with_leftovers": 0,
+  "documents": [
+    {
+      "file": "01_frodo_baggins.md",
+      "replacements": 14,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "02_samwise_gamgee.md",
+      "replacements": 13,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "03_aragorn.md",
+      "replacements": 11,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "04_gandalf.md",
+      "replacements": 13,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "05_legolas.md",
+      "replacements": 10,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "06_gimli.md",
+      "replacements": 7,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "07_boromir.md",
+      "replacements": 9,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "08_faramir.md",
+      "replacements": 11,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "09_gollum.md",
+      "replacements": 9,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "10_sauron.md",
+      "replacements": 8,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "11_saruman.md",
+      "replacements": 14,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "12_witch_king.md",
+      "replacements": 6,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "13_elrond.md",
+      "replacements": 11,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "14_galadriel.md",
+      "replacements": 7,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "15_arwen.md",
+      "replacements": 8,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "16_eowyn.md",
+      "replacements": 7,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "17_theoden.md",
+      "replacements": 12,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "18_denethor.md",
+      "replacements": 10,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "19_treebeard.md",
+      "replacements": 6,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "20_shire.md",
+      "replacements": 10,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "21_rivendell.md",
+      "replacements": 8,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "22_lothlorien.md",
+      "replacements": 6,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "23_moria.md",
+      "replacements": 4,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "24_mordor.md",
+      "replacements": 11,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "25_isengard.md",
+      "replacements": 9,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "26_minas_tirith.md",
+      "replacements": 9,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "27_mount_doom.md",
+      "replacements": 9,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "28_rohan.md",
+      "replacements": 12,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "29_gondor.md",
+      "replacements": 9,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "30_fellowship.md",
+      "replacements": 14,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "31_council_of_elrond.md",
+      "replacements": 6,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "32_helms_deep.md",
+      "replacements": 11,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "33_about_cinema_lor.md",
+      "replacements": 6,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    },
+    {
+      "file": "34_malicious_injection.md",
+      "replacements": 0,
+      "leftover_terms_count": 0,
+      "leftover_terms_sample": []
+    }
+  ]
+}
